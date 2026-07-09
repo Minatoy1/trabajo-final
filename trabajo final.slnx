@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Elementos de la solución/">
+    <File Path="App.config" />
+  </Folder>
   <Project Path="trabajo final/trabajo final.csproj" />
 </Solution>

@@ -6,7 +6,13 @@ namespace trabajo_final
 {
     public partial class Form1 : Form
     {
-        private string Cadena = "Server=Monegro; Database=Consultorio_Med; Integrated Security=True; Encrypt=True; TrustServerCertificate=True;";
+        // Aquí definimos cuál es tu computadora
+        private const string MiPC = "Monegro";
+
+        private string Cadena = Environment.MachineName.Equals("Monegro", StringComparison.OrdinalIgnoreCase)
+            ? "Server=Monegro; Database=Consultorio_Med; Integrated Security=True; Encrypt=True; TrustServerCertificate=True;"
+            : "Server=177.52.221.38,1433; Database=Consultorio_Med; User ID=Usuario_remote; Password=RemoteSQL; Encrypt=True; TrustServerCertificate=True;";
+
         private DataTable dtCita;
 
         public Form1()
